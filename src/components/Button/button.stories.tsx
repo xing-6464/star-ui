@@ -1,4 +1,4 @@
-import Button from './button'
+import { Button } from './button'
 
 import type { Meta, StoryObj } from '@storybook/react'
 
@@ -6,6 +6,9 @@ const meta = {
   title: 'Button 按钮',
   tags: ['autodocs'],
   component: Button,
+  args: {
+    children: 'button',
+  },
 } satisfies Meta<typeof Button>
 
 export default meta
@@ -13,10 +16,6 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
   storyName: '默认按钮样式',
-  args: {
-    btnType: 'default',
-    children: 'default button',
-  },
   render: (args) => <Button {...args} />,
 }
 
